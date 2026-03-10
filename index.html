@@ -94,7 +94,7 @@
 
         /* Hero Section Premium */
         .hero {
-            padding: 160px 20px 80px;
+            padding: 130px 20px 40px;
             text-align: center;
             position: relative;
         }
@@ -119,28 +119,50 @@
             color: var(--text-muted);
             font-size: 1.1rem;
             max-width: 600px;
-            margin: 0 auto 30px;
+            margin: 0 auto 20px;
         }
 
-        .hero-btn {
+        /* Banner Info Jam Operasional */
+        .info-banner {
+            background: rgba(0, 210, 255, 0.1);
+            border: 1px solid rgba(0, 210, 255, 0.3);
             display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 35px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: white;
-            text-decoration: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px 20px;
             border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px var(--primary-glow);
+            font-size: 0.9rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.1);
         }
+        .info-banner span { display: flex; align-items: center; gap: 6px; }
+        .info-banner i { color: var(--accent); }
 
-        .hero-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px var(--secondary-glow);
+        /* Filter Categories */
+        .filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+        .filter-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
         }
 
         /* Container & Titles */
@@ -162,7 +184,7 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
-            padding-top: 50px;
+            padding-top: 30px;
         }
 
         .section-title i {
@@ -253,6 +275,8 @@
             margin-bottom: 15px;
         }
 
+        .tax-badge { background: rgba(37, 211, 102, 0.2); color: #25D366; border-color: rgba(37, 211, 102, 0.4); }
+
         .price {
             font-size: 1.6rem;
             font-weight: 800;
@@ -261,9 +285,9 @@
             text-shadow: 0 0 10px rgba(255,255,255,0.2);
         }
 
-        /* Premium Buy Button */
+        /* Tombol Keranjang */
         .btn-beli {
-            background: linear-gradient(45deg, #25D366, #1da851);
+            background: linear-gradient(45deg, var(--secondary), var(--primary));
             color: white;
             border: none;
             padding: 12px 15px;
@@ -277,79 +301,200 @@
             justify-content: center;
             gap: 8px;
             width: 100%;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
         }
 
         .btn-beli:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 8px 25px rgba(0, 210, 255, 0.4);
             filter: brightness(1.1);
         }
 
-        /* Floating WA */
-        .floating-wa {
+        /* Floating Cart */
+        .floating-cart {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
+            border-radius: 50%;
+            display: none; 
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            box-shadow: 0 5px 20px var(--primary-glow);
+            z-index: 1000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: bounceIn 0.5s ease;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .floating-cart:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ff3b30;
+            color: white;
+            font-size: 13px;
+            font-weight: bold;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 32px;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            animation: pulse 2s infinite;
+            border: 2px solid var(--bg-color);
         }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
-            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        /* Sidebar Keranjang */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 400px;
+            height: 100vh;
+            background: rgba(15, 15, 20, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-left: 1px solid var(--border-color);
+            z-index: 1001;
+            transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.5);
         }
 
-        .floating-wa:hover {
-            transform: scale(1.1);
-            animation: none;
+        .cart-sidebar.active { right: 0; }
+
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.2);
         }
+
+        .cart-header h3 { color: #fff; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .cart-header button { background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; transition: color 0.3s; }
+        .cart-header button:hover { color: #ff3b30; }
+
+        .cart-items { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 15px; }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .cart-item-info h4 { font-size: 0.95rem; margin-bottom: 5px; color: #fff; }
+        .cart-item-info p { font-size: 0.9rem; color: var(--secondary); font-weight: 700; }
+
+        .cart-controls { display: flex; align-items: center; gap: 12px; }
+        .cart-controls button {
+            background: rgba(255,255,255,0.1); border: none; color: white; width: 30px; height: 30px;
+            border-radius: 8px; cursor: pointer; font-weight: bold; transition: background 0.3s;
+        }
+        .cart-controls button:hover { background: var(--primary); }
+
+        .cart-form { padding: 0 20px 15px; }
+        .cart-form label { display: block; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; font-weight: 500; }
+        .cart-form input {
+            width: 100%; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); color: white;
+            padding: 12px 15px; border-radius: 10px; font-size: 1rem; outline: none; transition: border 0.3s;
+        }
+        .cart-form input:focus { border-color: var(--secondary); box-shadow: 0 0 10px rgba(0, 210, 255, 0.2); }
+
+        .cart-footer { padding: 20px; border-top: 1px solid var(--border-color); background: rgba(0,0,0,0.3); }
+        .cart-total { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 1.3rem; font-weight: 800; color: #fff; }
+        
+        .btn-checkout {
+            background: linear-gradient(45deg, #00d2ff, #3a7bd5); color: white; border: none; padding: 15px;
+            border-radius: 12px; font-weight: 600; font-size: 1.1rem; cursor: pointer; width: 100%;
+            display: flex; align-items: center; justify-content: center; gap: 10px; transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3);
+        }
+        .btn-checkout:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 210, 255, 0.5); }
+
+        /* Modal QRIS Styling */
+        .qris-modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(5px);
+            z-index: 2000; display: none; justify-content: center; align-items: center;
+        }
+        .qris-modal-content {
+            background: var(--bg-color); border: 1px solid var(--primary); border-radius: 20px;
+            padding: 30px; max-width: 400px; width: 90%; text-align: center;
+            box-shadow: 0 10px 40px rgba(138, 43, 226, 0.4); position: relative;
+            animation: modalPop 0.4s ease-out;
+        }
+        @keyframes modalPop { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        
+        .close-modal {
+            position: absolute; top: 15px; right: 20px; font-size: 1.5rem; color: var(--text-muted);
+            cursor: pointer; transition: 0.3s; background: none; border: none;
+        }
+        .close-modal:hover { color: #ff3b30; }
+        
+        .qris-modal-content h2 { color: #fff; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .qris-modal-content p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; }
+        
+        .qris-price-tag {
+            background: rgba(0, 210, 255, 0.1); border: 1px dashed var(--secondary);
+            padding: 10px; border-radius: 10px; font-size: 1.5rem; font-weight: bold;
+            color: var(--secondary); margin-bottom: 20px;
+        }
+
+        .qris-image-container {
+            background: #fff; padding: 15px; border-radius: 15px; margin-bottom: 20px; display: inline-block;
+        }
+        .qris-image-container img { max-width: 100%; height: auto; border-radius: 8px; width: 250px; }
+
+        .warning-text { color: #ffc107 !important; font-size: 0.85rem !important; font-weight: 600; margin-bottom: 20px !important; }
+
+        .btn-wa-confirm {
+            background: linear-gradient(45deg, #25D366, #1da851); color: white; border: none;
+            padding: 15px; border-radius: 12px; font-weight: 600; font-size: 1rem; cursor: pointer;
+            width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;
+            transition: all 0.3s; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+        .btn-wa-confirm:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
 
         footer {
-            background: rgba(10, 10, 15, 0.95);
-            text-align: center;
-            padding: 30px 20px;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
-            font-size: 0.9rem;
-            margin-top: 20px;
+            background: rgba(10, 10, 15, 0.95); text-align: center; padding: 30px 20px;
+            color: var(--text-muted); border-top: 1px solid var(--border-color); margin-top: 20px; font-size: 0.9rem;
         }
 
-        /* RESPONSIVITAS MAKSIMAL UNTUK SEMUA JENIS HP */
         @media (max-width: 768px) {
-            .hero { padding: 130px 20px 60px; }
+            .hero { padding: 110px 20px 40px; }
             .hero h1 { font-size: 2.3rem; }
-            .hero p { font-size: 0.95rem; }
-            .section-title { font-size: 1.4rem; padding-top: 30px; }
-            
-            .grid { 
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
-                gap: 15px; 
-            }
+            .info-banner { flex-direction: column; text-align: center; gap: 8px; border-radius: 15px; }
+            .section-title { font-size: 1.4rem; padding-top: 10px; }
+            .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; margin-bottom: 40px; }
             .card { padding: 20px 15px; border-radius: 16px; }
             .card-icon { font-size: 2.5rem; margin-bottom: 10px; }
             .card h3 { font-size: 1rem; }
-            .badge { font-size: 0.75rem; padding: 3px 8px; }
             .price { font-size: 1.25rem; margin-bottom: 15px; }
             .btn-beli { font-size: 0.85rem; padding: 10px; }
-            
-            .floating-wa { width: 50px; height: 50px; font-size: 28px; bottom: 20px; right: 20px; }
+            .floating-cart { width: 55px; height: 55px; font-size: 20px; bottom: 20px; right: 20px; }
         }
 
-        /* Layar HP Super Kecil (iPhone 5/SE dll) -> Wajib 1 Kolom biar tidak kepotong */
         @media (max-width: 380px) {
             .grid { grid-template-columns: 1fr; } 
             .card-icon { font-size: 3rem; }
@@ -370,275 +515,341 @@
     <section class="hero">
         <h1>BOTOL COMMUNITY STORE</h1>
         <p>Pusat Top-Up Robux, Gamepass, & In-Game Gifts Terpercaya dan Termurah!</p>
-        <a href="#katalog" class="hero-btn"><i class="fa-solid fa-cart-shopping"></i> Lihat Katalog</a>
+
+        <div class="info-banner">
+            <span><i class="fa-regular fa-clock"></i> Buka: 09.00 - 22.00 WIB</span>
+            <span><i class="fa-solid fa-bolt"></i> Proses 5-10 Menit</span>
+            <span><i class="fa-solid fa-triangle-exclamation" style="color:#ffc107;"></i> Robux Pending 5 Hari</span>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterData('semua', this)">Semua Kategori</button>
+            <button class="filter-btn" onclick="filterData('robux', this)">Robux</button>
+            <button class="filter-btn" onclick="filterData('sawah', this)">Sawah Indo</button>
+            <button class="filter-btn" onclick="filterData('fish', this)">Fish It</button>
+        </div>
     </section>
 
     <div class="container" id="katalog">
 
-        <h2 class="section-title"><i class="fa-solid fa-coins"></i> Robux Via Gamepass</h2>
-        <div class="grid">
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-coins card-icon" style="color: #00d2ff;"></i>
-                    <h3>100 Robux</h3>
-                    <p class="price">Rp 13.000</p>
+        <div class="category-section" data-category="robux">
+            <h2 class="section-title"><i class="fa-solid fa-coins"></i> Robux Via Gamepass</h2>
+            <div class="grid">
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-coins card-icon" style="color: #00d2ff;"></i>
+                        <h3>100 Robux</h3>
+                        <span class="badge tax-badge"><i class="fa-solid fa-check"></i> Tax Covered</span>
+                        <p class="price">Rp 13.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('100 Robux', 13000)"><i class="fa-solid fa-plus"></i> Tambah</button>
                 </div>
-                <button class="btn-beli" onclick="beliViaWA('100 Robux', 'Rp 13.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-sack-dollar card-icon" style="color: #00d2ff;"></i>
-                    <h3>500 Robux</h3>
-                    <p class="price">Rp 65.000</p>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-sack-dollar card-icon" style="color: #00d2ff;"></i>
+                        <h3>500 Robux</h3>
+                        <span class="badge tax-badge"><i class="fa-solid fa-check"></i> Tax Covered</span>
+                        <p class="price">Rp 65.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('500 Robux', 65000)"><i class="fa-solid fa-plus"></i> Tambah</button>
                 </div>
-                <button class="btn-beli" onclick="beliViaWA('500 Robux', 'Rp 65.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-gem card-icon" style="color: #00d2ff;"></i>
-                    <h3>1.000 Robux</h3>
-                    <p class="price">Rp 120.000</p>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-gem card-icon" style="color: #00d2ff;"></i>
+                        <h3>1.000 Robux</h3>
+                        <span class="badge tax-badge"><i class="fa-solid fa-check"></i> Tax Covered</span>
+                        <p class="price">Rp 120.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('1.000 Robux', 120000)"><i class="fa-solid fa-plus"></i> Tambah</button>
                 </div>
-                <button class="btn-beli" onclick="beliViaWA('1.000 Robux', 'Rp 120.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-crown card-icon" style="color: #00d2ff;"></i>
-                    <h3>10.000 Robux</h3>
-                    <p class="price">Rp 1.200.000</p>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-crown card-icon" style="color: #00d2ff;"></i>
+                        <h3>10.000 Robux</h3>
+                        <span class="badge tax-badge"><i class="fa-solid fa-check"></i> Tax Covered</span>
+                        <p class="price">Rp 1.200.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('10.000 Robux', 1200000)"><i class="fa-solid fa-plus"></i> Tambah</button>
                 </div>
-                <button class="btn-beli" onclick="beliViaWA('10.000 Robux', 'Rp 1.200.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-        </div>
-
-        <h2 class="section-title"><i class="fa-solid fa-wheat-awn"></i> Gamepass: Sawah Indo</h2>
-        <div class="grid">
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-seedling card-icon" style="color: #28a745;"></i>
-                    <h3>2x Harvest</h3>
-                    <p class="price">Rp 4.500</p>
-                </div>
-                <button class="btn-beli" onclick="beliViaWA('Sawah Indo: 2x Harvest', 'Rp 4.500')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-bolt card-icon" style="color: #ffc107;"></i>
-                    <h3>Fast Grow</h3>
-                    <p class="price">Rp 6.500</p>
-                </div>
-                <button class="btn-beli" onclick="beliViaWA('Sawah Indo: Fast Grow', 'Rp 6.500')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-box-open card-icon" style="color: #17a2b8;"></i>
-                    <h3>Extra Slots</h3>
-                    <p class="price">Rp 8.500</p>
-                </div>
-                <button class="btn-beli" onclick="beliViaWA('Sawah Indo: Extra Slots', 'Rp 8.500')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-money-bill-trend-up card-icon" style="color: #ffc107;"></i>
-                    <h3>2x Sell</h3>
-                    <p class="price">Rp 8.500</p>
-                </div>
-                <button class="btn-beli" onclick="beliViaWA('Sawah Indo: 2x Sell', 'Rp 8.500')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-angles-up card-icon" style="color: #007bff;"></i>
-                    <h3>2x XP</h3>
-                    <p class="price">Rp 13.000</p>
-                </div>
-                <button class="btn-beli" onclick="beliViaWA('Sawah Indo: 2x XP', 'Rp 13.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-cloud-showers-heavy card-icon" style="color: #17a2b8;"></i>
-                    <h3>Rain Lover</h3>
-                    <p class="price">Rp 13.500</p>
-                </div>
-                <button class="btn-beli" onclick="beliViaWA('Sawah Indo: Rain Lover', 'Rp 13.500')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-tractor card-icon" style="color: #6c757d;"></i>
-                    <h3>Auto Harvest</h3>
-                    <p class="price">Rp 21.500</p>
-                </div>
-                <button class="btn-beli" onclick="beliViaWA('Sawah Indo: Auto Harvest', 'Rp 21.500')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-radio card-icon" style="color: #dc3545;"></i>
-                    <h3>BoomBox</h3>
-                    <p class="price">Rp 17.000</p>
-                </div>
-                <button class="btn-beli" onclick="beliViaWA('Sawah Indo: BoomBox', 'Rp 17.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-crown card-icon" style="color: #ffc107;"></i>
-                    <h3>VIP Farmer</h3>
-                    <p class="price">Rp 42.500</p>
-                </div>
-                <button class="btn-beli" onclick="beliViaWA('Sawah Indo: VIP Farmer', 'Rp 42.500')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
             </div>
         </div>
 
-        <h2 class="section-title"><i class="fa-solid fa-fish-fins"></i> Fish It: Gamepass</h2>
-        <div class="grid">
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-crown card-icon" style="color: #ffc107;"></i>
-                    <h3>VIP + Luck</h3>
-                    <span class="badge"><i class="fa-solid fa-gem"></i> 445 R$</span>
-                    <p class="price">Rp 38.000</p>
+        <div class="category-section" data-category="sawah">
+            <h2 class="section-title"><i class="fa-solid fa-wheat-awn"></i> Gamepass: Sawah Indo</h2>
+            <div class="grid">
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-seedling card-icon" style="color: #28a745;"></i>
+                        <h3>2x Harvest</h3>
+                        <p class="price">Rp 4.500</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: 2x Harvest', 4500)"><i class="fa-solid fa-plus"></i> Tambah</button>
                 </div>
-                <button class="btn-beli" onclick="beliViaWA('Fish It: VIP + Luck', 'Rp 38.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-dna card-icon" style="color: #28a745;"></i>
-                    <h3>More Mutations</h3>
-                    <span class="badge"><i class="fa-solid fa-gem"></i> 295 R$</span>
-                    <p class="price">Rp 25.000</p>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-bolt card-icon" style="color: #ffc107;"></i>
+                        <h3>Fast Grow</h3>
+                        <p class="price">Rp 6.500</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: Fast Grow', 6500)"><i class="fa-solid fa-plus"></i> Tambah</button>
                 </div>
-                <button class="btn-beli" onclick="beliViaWA('Fish It: More Mutations', 'Rp 25.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-clover card-icon" style="color: #ffc107;"></i>
-                    <h3>Advanced Luck</h3>
-                    <span class="badge"><i class="fa-solid fa-gem"></i> 545 R$</span>
-                    <p class="price">Rp 46.500</p>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-box-open card-icon" style="color: #17a2b8;"></i>
+                        <h3>Extra Slots</h3>
+                        <p class="price">Rp 8.500</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: Extra Slots', 8500)"><i class="fa-solid fa-plus"></i> Tambah</button>
                 </div>
-                <button class="btn-beli" onclick="beliViaWA('Fish It: Advanced Luck', 'Rp 46.500')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-horseshoe card-icon" style="color: #28a745;"></i>
-                    <h3>Extra Luck</h3>
-                    <span class="badge"><i class="fa-solid fa-gem"></i> 245 R$</span>
-                    <p class="price">Rp 21.000</p>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-money-bill-trend-up card-icon" style="color: #ffc107;"></i>
+                        <h3>2x Sell</h3>
+                        <p class="price">Rp 8.500</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: 2x Sell', 8500)"><i class="fa-solid fa-plus"></i> Tambah</button>
                 </div>
-                <button class="btn-beli" onclick="beliViaWA('Fish It: Extra Luck', 'Rp 21.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-angles-up card-icon" style="color: #00d2ff;"></i>
-                    <h3>Double XP</h3>
-                    <span class="badge"><i class="fa-solid fa-gem"></i> 195 R$</span>
-                    <p class="price">Rp 16.500</p>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-angles-up card-icon" style="color: #007bff;"></i>
+                        <h3>2x XP</h3>
+                        <p class="price">Rp 13.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: 2x XP', 13000)"><i class="fa-solid fa-plus"></i> Tambah</button>
                 </div>
-                <button class="btn-beli" onclick="beliViaWA('Fish It: Double XP', 'Rp 16.500')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-ship card-icon" style="color: #17a2b8;"></i>
-                    <h3>Mini Hoverboat</h3>
-                    <span class="badge"><i class="fa-solid fa-gem"></i> 225 R$</span>
-                    <p class="price">Rp 20.000</p>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-cloud-showers-heavy card-icon" style="color: #17a2b8;"></i>
+                        <h3>Rain Lover</h3>
+                        <p class="price">Rp 13.500</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: Rain Lover', 13500)"><i class="fa-solid fa-plus"></i> Tambah</button>
                 </div>
-                <button class="btn-beli" onclick="beliViaWA('Fish It: Mini Hoverboat', 'Rp 20.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-shop card-icon" style="color: #ffc107;"></i>
-                    <h3>Sell Anywhere</h3>
-                    <span class="badge"><i class="fa-solid fa-gem"></i> 315 R$</span>
-                    <p class="price">Rp 27.000</p>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-tractor card-icon" style="color: #6c757d;"></i>
+                        <h3>Auto Harvest</h3>
+                        <p class="price">Rp 21.500</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: Auto Harvest', 21500)"><i class="fa-solid fa-plus"></i> Tambah</button>
                 </div>
-                <button class="btn-beli" onclick="beliViaWA('Fish It: Sell Anywhere', 'Rp 27.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-star card-icon" style="color: #28a745;"></i>
-                    <h3>Small Luck</h3>
-                    <span class="badge"><i class="fa-solid fa-gem"></i> 50 R$</span>
-                    <p class="price">Rp 4.000</p>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-radio card-icon" style="color: #dc3545;"></i>
+                        <h3>BoomBox</h3>
+                        <p class="price">Rp 17.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: BoomBox', 17000)"><i class="fa-solid fa-plus"></i> Tambah</button>
                 </div>
-                <button class="btn-beli" onclick="beliViaWA('Fish It: Small Luck', 'Rp 4.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-        </div>
-
-        <h2 class="section-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Fish It: Limited Skin</h2>
-        <div class="grid">
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-skull card-icon" style="color: #8a2be2;"></i>
-                    <h3>Dark Matter Scythe</h3>
-                    <span class="badge"><i class="fa-solid fa-gem"></i> 999 R$</span>
-                    <p class="price">Rp 85.000</p>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-crown card-icon" style="color: #ffc107;"></i>
+                        <h3>VIP Farmer</h3>
+                        <p class="price">Rp 42.500</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: VIP Farmer', 42500)"><i class="fa-solid fa-plus"></i> Tambah</button>
                 </div>
-                <button class="btn-beli" onclick="beliViaWA('Fish It: Dark Matter Scythe', 'Rp 85.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-guitar card-icon" style="color: #ff69b4;"></i>
-                    <h3>Kitty Guitar</h3>
-                    <span class="badge"><i class="fa-solid fa-gem"></i> 899 R$</span>
-                    <p class="price">Rp 75.000</p>
-                </div>
-                <button class="btn-beli" onclick="beliViaWA('Fish It: Kitty Guitar', 'Rp 75.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-shuttle-space card-icon" style="color: #9d00ff;"></i>
-                    <h3>Voidcraft Boat</h3>
-                    <span class="badge"><i class="fa-solid fa-gem"></i> 549 R$</span>
-                    <p class="price">Rp 47.000</p>
-                </div>
-                <button class="btn-beli" onclick="beliViaWA('Fish It: Voidcraft Boat', 'Rp 47.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
-            </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-box card-icon" style="color: #00d2ff;"></i>
-                    <h3>Azura Crate</h3>
-                    <span class="badge"><i class="fa-solid fa-gem"></i> 109 R$</span>
-                    <p class="price">Rp 9.500</p>
-                </div>
-                <button class="btn-beli" onclick="beliViaWA('Fish It: Azura Crate', 'Rp 9.500')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
             </div>
         </div>
 
-        <h2 class="section-title"><i class="fa-solid fa-rocket"></i> Fish It: Boost & Crate</h2>
-        <div class="grid">
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-rocket card-icon" style="color: #00d2ff;"></i>
-                    <h3>Server Boost x8</h3>
-                    <span class="badge"><i class="fa-regular fa-clock"></i> 6 Jam</span>
-                    <p class="price">Rp 109.000</p>
+        <div class="category-section" data-category="fish">
+            <h2 class="section-title"><i class="fa-solid fa-fish-fins"></i> Fish It: Gamepass</h2>
+            <div class="grid">
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-crown card-icon" style="color: #ffc107;"></i>
+                        <h3>VIP + Luck</h3>
+                        <span class="badge"><i class="fa-solid fa-gem"></i> 445 R$</span>
+                        <p class="price">Rp 38.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: VIP + Luck', 38000)"><i class="fa-solid fa-plus"></i> Tambah</button>
                 </div>
-                <button class="btn-beli" onclick="beliViaWA('Fish It: Boost x8 (6 Jam)', 'Rp 109.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-dna card-icon" style="color: #28a745;"></i>
+                        <h3>More Mutations</h3>
+                        <span class="badge"><i class="fa-solid fa-gem"></i> 295 R$</span>
+                        <p class="price">Rp 25.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: More Mutations', 25000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                </div>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-clover card-icon" style="color: #ffc107;"></i>
+                        <h3>Advanced Luck</h3>
+                        <span class="badge"><i class="fa-solid fa-gem"></i> 545 R$</span>
+                        <p class="price">Rp 46.500</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Advanced Luck', 46500)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                </div>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-horseshoe card-icon" style="color: #28a745;"></i>
+                        <h3>Extra Luck</h3>
+                        <span class="badge"><i class="fa-solid fa-gem"></i> 245 R$</span>
+                        <p class="price">Rp 21.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Extra Luck', 21000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                </div>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-angles-up card-icon" style="color: #00d2ff;"></i>
+                        <h3>Double XP</h3>
+                        <span class="badge"><i class="fa-solid fa-gem"></i> 195 R$</span>
+                        <p class="price">Rp 16.500</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Double XP', 16500)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                </div>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-ship card-icon" style="color: #17a2b8;"></i>
+                        <h3>Mini Hoverboat</h3>
+                        <span class="badge"><i class="fa-solid fa-gem"></i> 225 R$</span>
+                        <p class="price">Rp 20.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Mini Hoverboat', 20000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                </div>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-shop card-icon" style="color: #ffc107;"></i>
+                        <h3>Sell Anywhere</h3>
+                        <span class="badge"><i class="fa-solid fa-gem"></i> 315 R$</span>
+                        <p class="price">Rp 27.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Sell Anywhere', 27000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                </div>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-star card-icon" style="color: #28a745;"></i>
+                        <h3>Small Luck</h3>
+                        <span class="badge"><i class="fa-solid fa-gem"></i> 50 R$</span>
+                        <p class="price">Rp 4.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Small Luck', 4000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                </div>
             </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-gauge-high card-icon" style="color: #8a2be2;"></i>
-                    <h3>Server Boost x8</h3>
-                    <span class="badge"><i class="fa-regular fa-clock"></i> 12 Jam</span>
-                    <p class="price">Rp 160.000</p>
+
+            <h2 class="section-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Fish It: Limited Skin</h2>
+            <div class="grid">
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-skull card-icon" style="color: #8a2be2;"></i>
+                        <h3>Dark Matter Scythe</h3>
+                        <span class="badge"><i class="fa-solid fa-gem"></i> 999 R$</span>
+                        <p class="price">Rp 85.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Dark Matter Scythe', 85000)"><i class="fa-solid fa-plus"></i> Tambah</button>
                 </div>
-                <button class="btn-beli" onclick="beliViaWA('Fish It: Boost x8 (12 Jam)', 'Rp 160.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-guitar card-icon" style="color: #ff69b4;"></i>
+                        <h3>Kitty Guitar</h3>
+                        <span class="badge"><i class="fa-solid fa-gem"></i> 899 R$</span>
+                        <p class="price">Rp 75.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Kitty Guitar', 75000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                </div>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-shuttle-space card-icon" style="color: #9d00ff;"></i>
+                        <h3>Voidcraft Boat</h3>
+                        <span class="badge"><i class="fa-solid fa-gem"></i> 549 R$</span>
+                        <p class="price">Rp 47.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Voidcraft Boat', 47000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                </div>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-box card-icon" style="color: #00d2ff;"></i>
+                        <h3>Azura Crate</h3>
+                        <span class="badge"><i class="fa-solid fa-gem"></i> 109 R$</span>
+                        <p class="price">Rp 9.500</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Azura Crate', 9500)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                </div>
             </div>
-            <div class="card">
-                <div>
-                    <i class="fa-solid fa-jet-fighter card-icon" style="color: #dc3545;"></i>
-                    <h3>Server Boost x8</h3>
-                    <span class="badge"><i class="fa-regular fa-clock"></i> 24 Jam</span>
-                    <p class="price">Rp 260.000</p>
+
+            <h2 class="section-title"><i class="fa-solid fa-rocket"></i> Fish It: Boost & Crate</h2>
+            <div class="grid">
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-rocket card-icon" style="color: #00d2ff;"></i>
+                        <h3>Server Boost x8</h3>
+                        <span class="badge"><i class="fa-regular fa-clock"></i> 6 Jam</span>
+                        <p class="price">Rp 109.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Boost x8 (6 Jam)', 109000)"><i class="fa-solid fa-plus"></i> Tambah</button>
                 </div>
-                <button class="btn-beli" onclick="beliViaWA('Fish It: Boost x8 (24 Jam)', 'Rp 260.000')"><i class="fa-brands fa-whatsapp"></i> Beli</button>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-gauge-high card-icon" style="color: #8a2be2;"></i>
+                        <h3>Server Boost x8</h3>
+                        <span class="badge"><i class="fa-regular fa-clock"></i> 12 Jam</span>
+                        <p class="price">Rp 160.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Boost x8 (12 Jam)', 160000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                </div>
+                <div class="card">
+                    <div>
+                        <i class="fa-solid fa-jet-fighter card-icon" style="color: #dc3545;"></i>
+                        <h3>Server Boost x8</h3>
+                        <span class="badge"><i class="fa-regular fa-clock"></i> 24 Jam</span>
+                        <p class="price">Rp 260.000</p>
+                    </div>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Boost x8 (24 Jam)', 260000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                </div>
             </div>
         </div>
 
     </div>
 
-    <a href="https://wa.me/62895414479460" class="floating-wa" target="_blank" title="Hubungi Admin">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <div class="floating-cart" id="floating-cart" onclick="toggleCart()">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <div class="cart-badge" id="cart-badge">0</div>
+    </div>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Keranjang</h3>
+            <button onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        
+        <div class="cart-form">
+            <label for="roblox-user"><i class="fa-solid fa-user"></i> Username Roblox (Wajib)</label>
+            <input type="text" id="roblox-user" placeholder="Ketik Username (Bukan Display Name)" required>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">Rp 0</span>
+            </div>
+            <button class="btn-checkout" onclick="bukaModalQRIS()">
+                <i class="fa-solid fa-qrcode"></i> Lanjut Bayar (QRIS)
+            </button>
+        </div>
+    </div>
+
+    <div class="qris-modal-overlay" id="qrisModal">
+        <div class="qris-modal-content">
+            <button class="close-modal" onclick="tutupModalQRIS()"><i class="fa-solid fa-xmark"></i></button>
+            <h2><i class="fa-solid fa-qrcode" style="color:var(--secondary);"></i> Scan QRIS</h2>
+            <p>Silakan bayar sejumlah tagihan di bawah ini via M-Banking / E-Wallet (DANA, GoPay, OVO, ShopeePay).</p>
+            
+            <div class="qris-price-tag" id="modal-tagihan">Rp 0</div>
+            
+            <div class="qris-image-container">
+                <img src="LINK_FOTO_QRIS_KAMU_DISINI.jpeg" alt="QRIS Botol Store">
+            </div>
+
+            <p class="warning-text">⚠️ PENTING: Jangan lupa *Screenshot* bukti transfer ya!</p>
+            
+            <button class="btn-wa-confirm" onclick="konfirmasiKeWA()">
+                <i class="fa-brands fa-whatsapp"></i> Konfirmasi Bukti Transfer
+            </button>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2026 <span>BOTOL COMMUNITY STORE</span>. All rights reserved.</p>
@@ -646,12 +857,120 @@
 
     <script>
         const nomorWAAdmin = "62895414479460"; 
+        let keranjang = {};
+        let totalHargaGlobal = 0; 
 
-        function beliViaWA(namaBarang, hargaBarang) {
-            const pesanText = `Halo Admin Botol Store! 👋\n\nSaya tertarik untuk membeli via *Sistem Gift In-Game*:\n📦 Item: *${namaBarang}*\n💰 Harga: *${hargaBarang}*\n\nApakah stoknya masih tersedia dan bagaimana cara pembayarannya?`;
+        function formatRupiah(angka) { return 'Rp ' + angka.toLocaleString('id-ID'); }
+
+        // Fitur Filter
+        function filterData(kategori, element) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+            document.querySelectorAll('.category-section').forEach(section => {
+                if (kategori === 'semua' || section.getAttribute('data-category') === kategori) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+
+        function tambahKeKeranjang(nama, harga) {
+            if (keranjang[nama]) { keranjang[nama].qty += 1; } 
+            else { keranjang[nama] = { harga: harga, qty: 1 }; }
+            updateUIKeranjang();
+            const cartBtn = document.getElementById('floating-cart');
+            cartBtn.style.transform = 'scale(1.2)';
+            setTimeout(() => cartBtn.style.transform = 'scale(1)', 200);
+        }
+
+        function kurangiItem(nama) {
+            if (keranjang[nama]) {
+                keranjang[nama].qty -= 1;
+                if (keranjang[nama].qty <= 0) { delete keranjang[nama]; }
+                updateUIKeranjang();
+            }
+        }
+
+        function tambahItem(nama) {
+            if (keranjang[nama]) { keranjang[nama].qty += 1; updateUIKeranjang(); }
+        }
+
+        function updateUIKeranjang() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartBadge = document.getElementById('cart-badge');
+            const cartTotalPrice = document.getElementById('cart-total-price');
+            const floatingCart = document.getElementById('floating-cart');
+
+            cartItemsContainer.innerHTML = '';
+            let totalQty = 0;
+            totalHargaGlobal = 0;
+
+            for (const [nama, item] of Object.entries(keranjang)) {
+                totalQty += item.qty;
+                totalHargaGlobal += item.harga * item.qty;
+
+                const itemHTML = `
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <h4>${nama}</h4>
+                            <p>${formatRupiah(item.harga * item.qty)}</p>
+                        </div>
+                        <div class="cart-controls">
+                            <button onclick="kurangiItem('${nama}')"><i class="fa-solid fa-minus"></i></button>
+                            <span>${item.qty}</span>
+                            <button onclick="tambahItem('${nama}')"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                `;
+                cartItemsContainer.innerHTML += itemHTML;
+            }
+
+            cartBadge.innerText = totalQty;
+            cartTotalPrice.innerText = formatRupiah(totalHargaGlobal);
+
+            if (totalQty > 0) { floatingCart.style.display = 'flex'; } 
+            else { floatingCart.style.display = 'none'; document.getElementById('cart-sidebar').classList.remove('active'); }
+        }
+
+        function toggleCart() { document.getElementById('cart-sidebar').classList.toggle('active'); }
+
+        function bukaModalQRIS() {
+            if (Object.keys(keranjang).length === 0) return;
+
+            const usernameInput = document.getElementById('roblox-user').value.trim();
+            if (!usernameInput) {
+                alert("⚠️ Harap isi Username Roblox kamu sebelum checkout!");
+                document.getElementById('roblox-user').focus();
+                return;
+            }
+
+            document.getElementById('modal-tagihan').innerText = formatRupiah(totalHargaGlobal);
+            document.getElementById('cart-sidebar').classList.remove('active');
+            document.getElementById('qrisModal').style.display = 'flex';
+        }
+
+        function tutupModalQRIS() {
+            document.getElementById('qrisModal').style.display = 'none';
+            document.getElementById('cart-sidebar').classList.add('active');
+        }
+
+        function konfirmasiKeWA() {
+            const usernameInput = document.getElementById('roblox-user').value.trim();
+            
+            let pesanText = `Halo Admin Botol Store! 👋\n\nSaya sudah melakukan *PEMBAYARAN VIA QRIS*, berikut detail pesanannya:\n\n👤 *Username:* ${usernameInput}\n\n*Daftar Pesanan:*\n`;
+
+            for (const [nama, item] of Object.entries(keranjang)) {
+                pesanText += `📦 *${nama}* (${item.qty}x)\n`;
+            }
+
+            pesanText += `\n💰 *TOTAL DIBAYAR: ${formatRupiah(totalHargaGlobal)}*\n\n*(Berikut ini saya lampirkan gambar bukti transfernya ya min)*`;
+
             const pesanEncoded = encodeURIComponent(pesanText);
             const linkWhatsApp = `https://wa.me/${nomorWAAdmin}?text=${pesanEncoded}`;
             window.open(linkWhatsApp, '_blank');
+            
+            document.getElementById('qrisModal').style.display = 'none';
         }
     </script>
 </body>
