@@ -462,9 +462,36 @@
         }
 
         .qris-image-container {
-            background: #fff; padding: 15px; border-radius: 15px; margin-bottom: 20px; display: inline-block;
+            background: #fff; padding: 15px; border-radius: 15px; margin-bottom: 15px; display: inline-block;
         }
         .qris-image-container img { max-width: 100%; height: auto; border-radius: 8px; width: 250px; }
+
+        /* Style untuk Tombol Download QRIS Baru */
+        .btn-download-qris {
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-download-qris:hover {
+            background: var(--secondary);
+            color: var(--bg-color);
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+            transform: translateY(-2px);
+        }
 
         .warning-text { color: #ffc107 !important; font-size: 0.85rem !important; font-weight: 600; margin-bottom: 20px !important; }
 
@@ -842,6 +869,10 @@
             <div class="qris-image-container">
                 <img src="LINK_FOTO_QRIS_KAMU_DISINI.jpeg" alt="QRIS Botol Store">
             </div>
+
+            <a href="LINK_FOTO_QRIS_KAMU_DISINI.jpeg" download="QRIS_Botol_Store.jpeg" class="btn-download-qris">
+                <i class="fa-solid fa-download"></i> Simpan QRIS ke Galeri
+            </a>
 
             <p class="warning-text">⚠️ PENTING: Jangan lupa *Screenshot* bukti transfer ya!</p>
             
