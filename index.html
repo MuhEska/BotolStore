@@ -4,23 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="BOTOL COMMUNITY STORE">
+    <meta property="og:description" content="Pusat Top-Up Robux, Gamepass, & In-Game Gifts Terpercaya dan Termurah!">
     <title>BOTOL COMMUNITY STORE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #8a2be2;
-            --primary-glow: rgba(138, 43, 226, 0.6);
-            --secondary: #00d2ff;
-            --secondary-glow: rgba(0, 210, 255, 0.6);
-            --bg-color: #0a0a0f;
-            --card-bg: rgba(20, 22, 35, 0.4);
-            --text-main: #ffffff;
-            --text-muted: #a1a1aa;
-            --accent: #66fcf1;
-            --border-color: rgba(255, 255, 255, 0.08);
+            /* Neo-Brutalism Color Palette */
+            --bg-color: #f4f0ec; /* Off-white/Cream */
+            --black: #0f0f0f;
+            --white: #ffffff;
+            --primary: #cbfb45; /* Neon Green/Yellow */
+            --secondary: #9d4edd; /* Purple */
+            --accent1: #ff5757; /* Red */
+            --accent2: #5ce1e6; /* Cyan */
             --wa-color: #25D366;
-            --card-hover-bg: rgba(30, 32, 50, 0.7);
+            
+            /* Brutalist Elements */
+            --border-thick: 3px solid var(--black);
+            --shadow-solid: 6px 6px 0px var(--black);
+            --shadow-solid-hover: 2px 2px 0px var(--black);
+            --radius-box: 12px;
+            --radius-pill: 50px;
         }
 
         * {
@@ -32,26 +38,25 @@
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-main);
+            color: var(--black);
             line-height: 1.6;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(138, 43, 226, 0.1), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(0, 210, 255, 0.1), transparent 25%);
+            /* Background pattern dots retro */
+            background-image: radial-gradient(var(--black) 1px, transparent 1px);
+            background-size: 30px 30px;
+            background-position: 0 0;
         }
 
-        /* Modern Glassmorphism Header */
+        /* ---------------- HEADER ---------------- */
         header {
-            background: rgba(10, 10, 15, 0.75);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            background: var(--white);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            border-bottom: var(--border-thick);
+            box-shadow: 0 4px 0px var(--black);
         }
 
         .nav-container {
@@ -64,111 +69,161 @@
         }
 
         .logo {
-            font-size: 26px;
-            font-weight: 800;
-            color: var(--text-main);
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--black);
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             display: flex;
             align-items: center;
             gap: 12px;
-            transition: transform 0.3s ease;
+            transition: transform 0.2s;
         }
 
         .logo:hover {
-            transform: scale(1.05);
+            transform: rotate(-2deg) scale(1.05);
         }
 
         .logo i {
-            color: var(--primary);
-            font-size: 30px;
-            filter: drop-shadow(0 0 12px var(--primary-glow));
+            color: var(--accent1);
+            font-size: 32px;
         }
 
         .logo span {
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background: var(--primary);
+            padding: 0 8px;
+            border: 2px solid var(--black);
+            border-radius: 8px;
+            box-shadow: 3px 3px 0 var(--black);
         }
 
-        /* Hero Section Premium */
+        /* ---------------- HERO SECTION ---------------- */
         .hero {
-            padding: 130px 20px 40px;
+            padding: 140px 20px 40px;
             text-align: center;
             position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .title-box {
+            display: inline-block;
+            background: var(--accent2);
+            padding: 15px 30px;
+            border: var(--border-thick);
+            border-radius: var(--radius-box);
+            box-shadow: var(--shadow-solid);
+            margin-bottom: 25px;
+            transform: rotate(-1deg);
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            background: linear-gradient(45deg, #fff, var(--secondary), var(--primary), #fff);
-            background-size: 300% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shine 6s linear infinite;
-            letter-spacing: -1px;
-        }
-
-        @keyframes shine {
-            to { background-position: 300% center; }
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--black);
+            text-transform: uppercase;
+            line-height: 1.1;
         }
 
         .hero p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0 auto 25px;
+            background: var(--white);
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid var(--black);
+            border-radius: var(--radius-pill);
+            box-shadow: 4px 4px 0 var(--black);
         }
 
-        /* Banner Info Jam Operasional */
+        /* Info Banner */
         .info-banner {
-            background: rgba(0, 210, 255, 0.1);
-            border: 1px solid rgba(0, 210, 255, 0.3);
+            background: var(--white);
+            border: var(--border-thick);
             display: inline-flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: var(--secondary);
+            gap: 20px;
+            padding: 15px 25px;
+            border-radius: var(--radius-pill);
+            font-size: 0.95rem;
+            font-weight: 800;
+            box-shadow: var(--shadow-solid);
             margin-bottom: 30px;
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.1);
         }
-        .info-banner span { display: flex; align-items: center; gap: 6px; }
-        .info-banner i { color: var(--accent); }
+        
+        .info-banner span { display: flex; align-items: center; gap: 8px; }
+        .info-banner i { color: var(--accent1); font-size: 1.2rem; }
 
-        /* Filter Categories */
+        /* WA Group Btn */
+        .wa-group-container {
+            margin-bottom: 50px;
+        }
+        
+        .btn-wa-group {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--wa-color);
+            color: var(--black);
+            border: var(--border-thick);
+            padding: 15px 30px;
+            border-radius: var(--radius-pill);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1rem;
+            box-shadow: var(--shadow-solid);
+            transition: all 0.1s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-wa-group:hover, .btn-wa-group:active {
+            transform: translate(4px, 4px);
+            box-shadow: var(--shadow-solid-hover);
+            background: #20b958;
+        }
+
+        /* ---------------- FILTERS ---------------- */
         .filters {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
             margin-bottom: 40px;
             padding: 0 20px;
         }
+        
         .filter-btn {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 8px 20px;
-            border-radius: 20px;
+            background: var(--white);
+            border: var(--border-thick);
+            color: var(--black);
+            padding: 10px 25px;
+            border-radius: var(--radius-pill);
             cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
+            font-weight: 800;
+            font-size: 0.95rem;
+            box-shadow: 4px 4px 0 var(--black);
+            transition: all 0.1s ease;
+            text-transform: uppercase;
         }
-        .filter-btn:hover, .filter-btn.active {
+        
+        .filter-btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--black);
+        }
+        
+        .filter-btn.active {
             background: var(--primary);
-            border-color: var(--primary);
-            box-shadow: 0 0 15px var(--primary-glow);
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0 var(--black);
         }
 
-        /* Cara Order Section */
+        /* ---------------- CARA ORDER STEPS ---------------- */
         .steps-container {
             max-width: 1200px;
-            margin: 0 auto 20px;
+            margin: 0 auto 40px;
             padding: 0 20px;
         }
         
@@ -176,68 +231,64 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 25px;
-            margin-top: 30px;
-            margin-bottom: 20px;
+            margin-top: 20px;
         }
         
         .step-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 30px 20px;
+            background: var(--white);
+            border: var(--border-thick);
+            border-radius: var(--radius-box);
+            padding: 30px 20px 20px;
             text-align: center;
             position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .step-card:hover {
-            border-color: rgba(0, 210, 255, 0.4);
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.15);
+            box-shadow: var(--shadow-solid);
         }
         
         .step-number {
             position: absolute;
-            top: -18px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
-            width: 40px;
-            height: 40px;
+            top: -20px;
+            left: -20px;
+            background: var(--accent1);
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 800;
-            font-size: 1.2rem;
-            color: #fff;
-            box-shadow: 0 5px 15px var(--primary-glow);
-            border: 3px solid var(--bg-color);
+            font-weight: 900;
+            font-size: 1.4rem;
+            color: var(--white);
+            border: var(--border-thick);
+            box-shadow: 3px 3px 0 var(--black);
         }
         
+        .step-card:nth-child(2) .step-number { background: var(--accent2); color: var(--black); }
+        .step-card:nth-child(3) .step-number { background: var(--secondary); color: var(--white); }
+        .step-card:nth-child(4) .step-number { background: var(--wa-color); color: var(--black); }
+
         .step-icon {
-            font-size: 2.8rem;
-            margin: 15px 0;
-            color: var(--secondary);
-            filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.3));
+            font-size: 3rem;
+            margin: 10px 0 15px;
+            color: var(--black);
         }
         
         .step-card h4 {
-            color: #fff;
+            color: var(--black);
             margin-bottom: 10px;
-            font-size: 1.15rem;
-            font-weight: 700;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-bottom: 2px dashed var(--black);
+            padding-bottom: 5px;
         }
         
         .step-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.5;
+            color: #333;
+            font-size: 0.95rem;
+            font-weight: 600;
         }
 
-        /* Container & Titles */
+        /* ---------------- CATALOG SECTION ---------------- */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -245,161 +296,139 @@
         }
 
         .section-title {
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: 2rem;
+            font-weight: 900;
             text-align: center;
             margin-bottom: 40px;
-            color: var(--text-main);
+            color: var(--black);
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding-top: 30px;
+            display: inline-block;
+            background: var(--white);
+            padding: 10px 30px;
+            border: var(--border-thick);
+            box-shadow: 6px 6px 0 var(--accent2);
+            border-radius: var(--radius-pill);
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%) rotate(1deg);
         }
 
-        .section-title i {
-            color: var(--secondary);
-            filter: drop-shadow(0 0 10px var(--secondary-glow));
-        }
-
-        /* Grid System Responsif */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 25px;
-            margin-bottom: 70px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
         }
 
-        /* Card Modern Styling */
+        /* Brutalist Card */
         .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 30px 20px;
+            background: var(--white);
+            border: var(--border-thick);
+            border-radius: var(--radius-box);
+            padding: 25px 20px;
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: var(--shadow-solid);
+            transition: transform 0.2s, box-shadow 0.2s;
             position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, var(--secondary), transparent);
-            opacity: 0;
-            transition: opacity 0.4s ease;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            background: var(--card-hover-bg);
-            border-color: rgba(0, 210, 255, 0.3);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px var(--primary-glow);
-        }
-
-        .card:hover::before {
-            opacity: 1;
+            transform: translate(-3px, -3px);
+            box-shadow: 10px 10px 0 var(--black);
         }
 
         .card-icon {
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             margin-bottom: 15px;
-            transition: transform 0.4s ease;
-            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.15));
-        }
-
-        .card:hover .card-icon {
-            transform: scale(1.15) translateY(-5px);
+            color: var(--black);
         }
 
         .card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: 1.3rem;
+            font-weight: 900;
             margin-bottom: 10px;
-            color: #fff;
-            line-height: 1.3;
+            color: var(--black);
+            text-transform: uppercase;
         }
 
         .badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            color: var(--secondary);
-            font-weight: 600;
+            background: var(--bg-color);
+            border: 2px solid var(--black);
+            padding: 5px 15px;
+            border-radius: var(--radius-pill);
+            font-size: 0.85rem;
+            color: var(--black);
+            font-weight: 800;
             margin-bottom: 15px;
+            box-shadow: 2px 2px 0 var(--black);
         }
 
-        .tax-badge { background: rgba(37, 211, 102, 0.2); color: #25D366; border-color: rgba(37, 211, 102, 0.4); }
+        .tax-badge { background: var(--primary); }
 
         .price {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--black);
             margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(255,255,255,0.2);
+            background: var(--accent2);
+            padding: 5px 15px;
+            border: 2px solid var(--black);
+            transform: rotate(-3deg);
+            display: inline-block;
         }
 
-        /* Tombol Keranjang */
         .btn-beli {
-            background: linear-gradient(45deg, var(--secondary), var(--primary));
-            color: white;
-            border: none;
+            background: var(--black);
+            color: var(--white);
+            border: var(--border-thick);
             padding: 12px 15px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 0.95rem;
+            border-radius: var(--radius-box);
+            font-weight: 800;
+            font-size: 1rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.1s ease;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
             width: 100%;
+            text-transform: uppercase;
         }
 
-        .btn-beli:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 210, 255, 0.4);
-            filter: brightness(1.1);
+        .btn-beli:hover, .btn-beli:active {
+            background: var(--primary);
+            color: var(--black);
+            transform: translate(3px, 3px);
+            box-shadow: inset 3px 3px 0 rgba(0,0,0,0.2);
         }
 
-        /* Floating Cart */
+        /* ---------------- FLOATING CART ---------------- */
         .floating-cart {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 65px;
-            height: 65px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            background: var(--primary);
+            color: var(--black);
+            border: var(--border-thick);
+            border-radius: var(--radius-box);
             display: none; 
             justify-content: center;
             align-items: center;
-            font-size: 24px;
-            box-shadow: 0 5px 20px var(--primary-glow);
+            font-size: 28px;
+            box-shadow: var(--shadow-solid);
             z-index: 1000;
             cursor: pointer;
-            transition: all 0.3s ease;
-            animation: bounceIn 0.5s ease;
+            transition: all 0.1s ease;
+            animation: bounceIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         @keyframes bounceIn {
@@ -408,204 +437,240 @@
             100% { transform: scale(1); }
         }
 
-        .floating-cart:hover {
-            transform: scale(1.1);
+        .floating-cart:hover, .floating-cart:active {
+            transform: translate(4px, 4px);
+            box-shadow: var(--shadow-solid-hover);
         }
 
         .cart-badge {
             position: absolute;
-            top: -5px;
-            right: -5px;
-            background: #ff3b30;
-            color: white;
-            font-size: 13px;
-            font-weight: bold;
-            width: 26px;
-            height: 26px;
+            top: -10px;
+            right: -10px;
+            background: var(--accent1);
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 900;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 2px solid var(--bg-color);
+            border: 2px solid var(--black);
         }
 
-        /* Sidebar Keranjang */
+        /* ---------------- OVERLAY & SIDEBAR CART ---------------- */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .cart-overlay.active { opacity: 1; visibility: visible; }
+
         .cart-sidebar {
             position: fixed;
             top: 0;
             right: -100%;
             width: 100%;
-            max-width: 400px;
+            max-width: 420px;
             height: 100vh;
-            background: rgba(15, 15, 20, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-left: 1px solid var(--border-color);
+            background: var(--bg-color);
+            border-left: 5px solid var(--black);
             z-index: 1001;
             transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1);
             display: flex;
             flex-direction: column;
-            box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            box-shadow: -10px 0 0 rgba(0,0,0,0.1);
         }
 
         .cart-sidebar.active { right: 0; }
 
         .cart-header {
             padding: 20px;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: var(--border-thick);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(0,0,0,0.2);
+            background: var(--white);
         }
 
-        .cart-header h3 { color: #fff; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
-        .cart-header button { background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; transition: color 0.3s; }
-        .cart-header button:hover { color: #ff3b30; }
+        .cart-header h3 { color: var(--black); font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
+        
+        .btn-close {
+            background: var(--accent1);
+            border: 2px solid var(--black);
+            color: var(--white);
+            width: 40px; height: 40px;
+            border-radius: 8px;
+            font-size: 1.2rem; cursor: pointer;
+            box-shadow: 3px 3px 0 var(--black);
+            transition: 0.1s;
+        }
+        .btn-close:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--black); }
 
         .cart-items { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 15px; }
+
+        .empty-cart {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--black);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+        .empty-cart i { font-size: 4rem; margin-bottom: 20px; }
 
         .cart-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: var(--card-bg);
+            background: var(--white);
             padding: 15px;
-            border-radius: 15px;
-            border: 1px solid var(--border-color);
+            border-radius: var(--radius-box);
+            border: var(--border-thick);
+            box-shadow: 4px 4px 0 var(--black);
         }
 
-        .cart-item-info h4 { font-size: 0.95rem; margin-bottom: 5px; color: #fff; }
-        .cart-item-info p { font-size: 0.9rem; color: var(--secondary); font-weight: 700; }
+        .cart-item-info h4 { font-size: 1rem; margin-bottom: 5px; color: var(--black); font-weight: 800; }
+        .cart-item-info p { font-size: 1rem; color: var(--accent1); font-weight: 900; }
 
-        .cart-controls { display: flex; align-items: center; gap: 12px; }
+        .cart-controls { display: flex; align-items: center; gap: 10px; }
         .cart-controls button {
-            background: rgba(255,255,255,0.1); border: none; color: white; width: 30px; height: 30px;
-            border-radius: 8px; cursor: pointer; font-weight: bold; transition: background 0.3s;
+            background: var(--secondary); border: 2px solid var(--black); color: white; width: 32px; height: 32px;
+            border-radius: 8px; cursor: pointer; font-weight: bold; box-shadow: 2px 2px 0 var(--black);
         }
-        .cart-controls button:hover { background: var(--primary); }
+        .cart-controls button:active { transform: translate(2px,2px); box-shadow: 0 0 0 var(--black); }
+        .cart-controls span { font-weight: 900; font-size: 1.1rem; width: 20px; text-align: center; }
 
-        .cart-form { padding: 0 20px 15px; }
-        .cart-form label { display: block; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; font-weight: 500; }
+        .cart-form { padding: 0 20px 15px; background: var(--bg-color); }
+        .cart-form label { display: block; color: var(--black); font-size: 1rem; margin-bottom: 8px; font-weight: 800; }
         .cart-form input {
-            width: 100%; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); color: white;
-            padding: 12px 15px; border-radius: 10px; font-size: 1rem; outline: none; transition: border 0.3s;
+            width: 100%; background: var(--white); border: var(--border-thick); color: var(--black);
+            padding: 15px; border-radius: var(--radius-box); font-size: 1rem; outline: none; font-weight: 600;
+            box-shadow: 4px 4px 0 var(--black); transition: 0.1s;
         }
-        .cart-form input:focus { border-color: var(--secondary); box-shadow: 0 0 10px rgba(0, 210, 255, 0.2); }
+        .cart-form input:focus { background: #fffdf0; box-shadow: 2px 2px 0 var(--black); transform: translate(2px,2px); }
 
-        .cart-footer { padding: 20px; border-top: 1px solid var(--border-color); background: rgba(0,0,0,0.3); }
-        .cart-total { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 1.3rem; font-weight: 800; color: #fff; }
+        .cart-footer { padding: 20px; border-top: var(--border-thick); background: var(--white); }
+        .cart-total { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 1.5rem; font-weight: 900; color: var(--black); }
         
         .btn-checkout {
-            background: linear-gradient(45deg, #00d2ff, #3a7bd5); color: white; border: none; padding: 15px;
-            border-radius: 12px; font-weight: 600; font-size: 1.1rem; cursor: pointer; width: 100%;
-            display: flex; align-items: center; justify-content: center; gap: 10px; transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3);
+            background: var(--accent2); color: var(--black); border: var(--border-thick); padding: 15px;
+            border-radius: var(--radius-box); font-weight: 900; font-size: 1.2rem; cursor: pointer; width: 100%;
+            display: flex; align-items: center; justify-content: center; gap: 10px; 
+            box-shadow: var(--shadow-solid); transition: 0.1s; text-transform: uppercase;
         }
-        .btn-checkout:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 210, 255, 0.5); }
+        .btn-checkout:active { transform: translate(4px, 4px); box-shadow: var(--shadow-solid-hover); background: #4bc0c4; }
 
-        /* Modal QRIS Styling - Fix Support HP */
+        /* ---------------- TOAST NOTIFICATION ---------------- */
+        .toast-container {
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+            z-index: 9999; display: flex; flex-direction: column; gap: 10px; pointer-events: none;
+        }
+
+        .toast {
+            background: var(--white); border: var(--border-thick); color: var(--black);
+            padding: 12px 25px; border-radius: var(--radius-box); box-shadow: 6px 6px 0 var(--primary);
+            display: flex; align-items: center; gap: 12px; font-size: 1rem; font-weight: 800;
+            animation: slideUpFade 0.3s ease forwards; transition: opacity 0.3s, transform 0.3s;
+        }
+
+        @keyframes slideUpFade {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ---------------- QRIS MODAL ---------------- */
         .qris-modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(3px);
             z-index: 2000; display: none; justify-content: center; align-items: center;
         }
+        
         .qris-modal-content {
-            background: var(--bg-color); border: 1px solid var(--primary); border-radius: 20px;
+            background: var(--bg-color); border: 5px solid var(--black); border-radius: var(--radius-box);
             padding: 30px; max-width: 400px; width: 90%; text-align: center;
-            box-shadow: 0 10px 40px rgba(138, 43, 226, 0.4); position: relative;
-            animation: modalPop 0.4s ease-out;
-            max-height: 85vh; 
-            overflow-y: auto; 
+            box-shadow: 15px 15px 0 var(--accent2); position: relative;
+            animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-height: 90vh; overflow-y: auto; 
         }
-        
-        .qris-modal-content::-webkit-scrollbar { width: 6px; }
-        .qris-modal-content::-webkit-scrollbar-track { background: transparent; }
-        .qris-modal-content::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
 
-        @keyframes modalPop { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        @keyframes modalPop { 0% { transform: scale(0.8) rotate(-5deg); opacity: 0; } 100% { transform: scale(1) rotate(0); opacity: 1; } }
         
-        .close-modal {
-            position: absolute; top: 15px; right: 20px; font-size: 1.5rem; color: var(--text-muted);
-            cursor: pointer; transition: 0.3s; background: none; border: none; z-index: 10;
-        }
-        .close-modal:hover { color: #ff3b30; }
-        
-        .qris-modal-content h2 { color: #fff; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 10px; }
-        .qris-modal-content p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; }
+        .qris-modal-content h2 { color: var(--black); margin-bottom: 10px; font-weight: 900; text-transform: uppercase; }
+        .qris-modal-content p { color: #333; font-weight: 600; font-size: 0.95rem; margin-bottom: 20px; }
         
         .qris-price-tag {
-            background: rgba(0, 210, 255, 0.1); border: 1px dashed var(--secondary);
-            padding: 10px; border-radius: 10px; font-size: 1.5rem; font-weight: bold;
-            color: var(--secondary); margin-bottom: 20px;
+            background: var(--primary); border: var(--border-thick);
+            padding: 10px; border-radius: var(--radius-box); font-size: 1.8rem; font-weight: 900;
+            color: var(--black); margin-bottom: 20px; box-shadow: 4px 4px 0 var(--black);
+            transform: rotate(-2deg);
         }
 
         .qris-image-container {
-            background: #fff; padding: 15px; border-radius: 15px; margin-bottom: 15px; display: inline-block;
+            background: var(--white); padding: 15px; border: var(--border-thick); 
+            border-radius: var(--radius-box); margin-bottom: 15px; display: inline-block;
+            box-shadow: 4px 4px 0 var(--black);
         }
-        .qris-image-container img { max-width: 100%; height: auto; border-radius: 8px; width: 200px; }
+        .qris-image-container img { max-width: 100%; height: auto; width: 200px; border: 2px solid var(--black); }
 
         .btn-download-qris {
-            background: rgba(0, 210, 255, 0.1);
-            color: var(--secondary);
-            border: 1px solid var(--secondary);
-            padding: 10px 15px;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 20px;
-            text-decoration: none;
-            transition: all 0.3s;
+            background: var(--white); color: var(--black); border: var(--border-thick);
+            padding: 12px 15px; border-radius: var(--radius-box); font-weight: 800; font-size: 0.95rem;
+            display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 20px;
+            text-decoration: none; box-shadow: 4px 4px 0 var(--black); transition: 0.1s;
         }
+        .btn-download-qris:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--black); }
 
-        .btn-download-qris:hover {
-            background: var(--secondary);
-            color: var(--bg-color);
-            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .warning-text { color: #ffc107 !important; font-size: 0.85rem !important; font-weight: 600; margin-bottom: 20px !important; }
+        .warning-text { background: var(--accent1); color: var(--white); padding: 8px; border: 2px solid var(--black); border-radius: 8px; font-size: 0.85rem; font-weight: 800; margin-bottom: 20px; transform: rotate(1deg); }
 
         .btn-wa-confirm {
-            background: linear-gradient(45deg, #25D366, #1da851); color: white; border: none;
-            padding: 15px; border-radius: 12px; font-weight: 600; font-size: 1rem; cursor: pointer;
+            background: var(--wa-color); color: var(--black); border: var(--border-thick);
+            padding: 15px; border-radius: var(--radius-box); font-weight: 900; font-size: 1.1rem; cursor: pointer;
             width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;
-            transition: all 0.3s; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            box-shadow: var(--shadow-solid); transition: 0.1s; text-transform: uppercase;
         }
-        .btn-wa-confirm:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
+        .btn-wa-confirm:active { transform: translate(4px, 4px); box-shadow: var(--shadow-solid-hover); }
 
+        /* ---------------- FOOTER ---------------- */
         footer {
-            background: rgba(10, 10, 15, 0.95); text-align: center; padding: 30px 20px;
-            color: var(--text-muted); border-top: 1px solid var(--border-color); margin-top: 20px; font-size: 0.9rem;
+            background: var(--white); text-align: center; padding: 40px 20px;
+            color: var(--black); border-top: var(--border-thick); margin-top: 40px; font-weight: 700;
         }
 
+        /* ---------------- RESPONSIVE MEDIA QUERIES ---------------- */
         @media (max-width: 768px) {
-            .hero { padding: 110px 20px 40px; }
-            .hero h1 { font-size: 2.3rem; }
-            .info-banner { flex-direction: column; text-align: center; gap: 8px; border-radius: 15px; }
-            .section-title { font-size: 1.4rem; padding-top: 10px; }
-            .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; margin-bottom: 40px; }
-            .card { padding: 20px 15px; border-radius: 16px; }
-            .card-icon { font-size: 2.5rem; margin-bottom: 10px; }
+            .hero { padding: 120px 20px 30px; }
+            .hero h1 { font-size: 2.2rem; }
+            .info-banner { flex-direction: column; text-align: left; align-items: center; border-radius: 15px; }
+            .section-title { font-size: 1.5rem; padding: 10px 20px; box-shadow: 4px 4px 0 var(--accent2); }
+            .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; }
+            .card { padding: 20px 15px; box-shadow: 4px 4px 0 var(--black); }
+            .card:hover { transform: none; box-shadow: 4px 4px 0 var(--black); } /* Disable hover move on mobile */
+            .card-icon { font-size: 2.5rem; }
             .card h3 { font-size: 1rem; }
-            .price { font-size: 1.25rem; margin-bottom: 15px; }
-            .btn-beli { font-size: 0.85rem; padding: 10px; }
-            .floating-cart { width: 55px; height: 55px; font-size: 20px; bottom: 20px; right: 20px; }
-            .qris-modal-content { padding: 25px 20px; }
+            .price { font-size: 1.3rem; }
+            .floating-cart { width: 60px; height: 60px; font-size: 22px; bottom: 20px; right: 20px; box-shadow: 4px 4px 0 var(--black); }
+            .qris-modal-content { padding: 20px; box-shadow: 8px 8px 0 var(--accent2); }
         }
 
         @media (max-width: 380px) {
             .grid { grid-template-columns: 1fr; } 
             .card-icon { font-size: 3rem; }
             .card h3 { font-size: 1.2rem; }
-            .price { font-size: 1.4rem; }
         }
     </style>
 </head>
@@ -619,17 +684,26 @@
     </header>
 
     <section class="hero">
-        <h1>BOTOL COMMUNITY STORE</h1>
-        <p>Pusat Top-Up Robux, Gamepass, & In-Game Gifts Terpercaya dan Termurah!</p>
+        <div class="title-box">
+            <h1>BOTOL COMMUNITY STORE</h1>
+        </div>
+        <br>
+        <p>Pusat Top-Up Robux & Gamepass Termurah!</p>
 
         <div class="info-banner">
             <span><i class="fa-regular fa-clock"></i> Buka: 09.00 - 22.00 WIB</span>
             <span><i class="fa-solid fa-bolt"></i> Proses 5-10 Menit</span>
-            <span><i class="fa-solid fa-triangle-exclamation" style="color:#ffc107;"></i> Robux Pending 5 Hari</span>
+            <span><i class="fa-solid fa-triangle-exclamation"></i> Robux Pending 5 Hari</span>
+        </div>
+
+        <div class="wa-group-container">
+            <a href="https://chat.whatsapp.com/HHeDMOx5qWV0W51ziKdsBx?mode=gi_t" target="_blank" class="btn-wa-group">
+                <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> Join Grup Komunitas
+            </a>
         </div>
 
         <div class="filters">
-            <button class="filter-btn active" onclick="filterData('semua', this)">Semua Kategori</button>
+            <button class="filter-btn active" onclick="filterData('semua', this)">Semua</button>
             <button class="filter-btn" onclick="filterData('robux', this)">Robux</button>
             <button class="filter-btn" onclick="filterData('sawah', this)">Sawah Indo</button>
             <button class="filter-btn" onclick="filterData('fish', this)">Fish It</button>
@@ -637,31 +711,31 @@
     </section>
 
     <section class="steps-container">
-        <h2 class="section-title"><i class="fa-solid fa-clipboard-list"></i> Cara Order</h2>
+        <div class="section-title">CARA ORDER</div>
         <div class="steps-grid">
             <div class="step-card">
                 <div class="step-number">1</div>
                 <i class="fa-solid fa-cart-plus step-icon"></i>
                 <h4>Pilih Produk</h4>
-                <p>Klik tombol <b>"Tambah"</b> pada produk Robux atau Gamepass yang kamu inginkan.</p>
+                <p>Klik tombol <b>"Tambah"</b> pada produk Robux atau Gamepass.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">2</div>
-                <i class="fa-solid fa-user-check step-icon" style="color: #66fcf1;"></i>
+                <i class="fa-solid fa-user-check step-icon"></i>
                 <h4>Isi Username</h4>
-                <p>Buka keranjang belanja, lalu ketik <b>Username Roblox</b> kamu (bukan Display Name).</p>
+                <p>Buka keranjang, ketik <b>Username Roblox</b> (bukan Display Name).</p>
             </div>
             <div class="step-card">
                 <div class="step-number">3</div>
-                <i class="fa-solid fa-qrcode step-icon" style="color: #8a2be2;"></i>
+                <i class="fa-solid fa-qrcode step-icon"></i>
                 <h4>Scan QRIS</h4>
-                <p>Klik <b>"Lanjut Bayar"</b>, scan QRIS lewat M-Banking/E-Wallet, lalu <b>Screenshot</b> buktinya.</p>
+                <p>Klik <b>"Lanjut Bayar"</b>, scan via E-Wallet, lalu <b>Screenshot</b> buktinya.</p>
             </div>
             <div class="step-card">
                 <div class="step-number">4</div>
-                <i class="fa-brands fa-whatsapp step-icon" style="color: #25D366;"></i>
-                <h4>Konfirmasi WA</h4>
-                <p>Klik tombol konfirmasi untuk mengirim detail pesanan & bukti transfer ke <b>WhatsApp Admin</b>.</p>
+                <i class="fa-brands fa-whatsapp step-icon"></i>
+                <h4>Konfirmasi</h4>
+                <p>Kirim detail pesanan & bukti transfer ke <b>WA Admin</b>.</p>
             </div>
         </div>
     </section>
@@ -669,275 +743,277 @@
     <div class="container" id="katalog">
 
         <div class="category-section" data-category="robux">
-            <h2 class="section-title"><i class="fa-solid fa-coins"></i> Robux Via Gamepass</h2>
+            <div class="section-title">ROBUX VIA GAMEPASS</div>
             <div class="grid">
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-coins card-icon" style="color: #00d2ff;"></i>
+                        <i class="fa-solid fa-coins card-icon"></i>
                         <h3>100 Robux</h3>
                         <span class="badge tax-badge"><i class="fa-solid fa-check"></i> Tax Covered</span>
-                        <p class="price">Rp 13.000</p>
+                        <div class="price">Rp 13.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('100 Robux', 13000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('100 Robux', 13000)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-sack-dollar card-icon" style="color: #00d2ff;"></i>
+                        <i class="fa-solid fa-sack-dollar card-icon"></i>
                         <h3>500 Robux</h3>
                         <span class="badge tax-badge"><i class="fa-solid fa-check"></i> Tax Covered</span>
-                        <p class="price">Rp 65.000</p>
+                        <div class="price">Rp 65.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('500 Robux', 65000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('500 Robux', 65000)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-gem card-icon" style="color: #00d2ff;"></i>
+                        <i class="fa-solid fa-gem card-icon"></i>
                         <h3>1.000 Robux</h3>
                         <span class="badge tax-badge"><i class="fa-solid fa-check"></i> Tax Covered</span>
-                        <p class="price">Rp 120.000</p>
+                        <div class="price">Rp 120.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('1.000 Robux', 120000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('1.000 Robux', 120000)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-crown card-icon" style="color: #00d2ff;"></i>
+                        <i class="fa-solid fa-crown card-icon"></i>
                         <h3>10.000 Robux</h3>
                         <span class="badge tax-badge"><i class="fa-solid fa-check"></i> Tax Covered</span>
-                        <p class="price">Rp 1.200.000</p>
+                        <div class="price">Rp 1.200.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('10.000 Robux', 1200000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('10.000 Robux', 1200000)">Tambah</button>
                 </div>
             </div>
         </div>
 
         <div class="category-section" data-category="sawah">
-            <h2 class="section-title"><i class="fa-solid fa-wheat-awn"></i> Gamepass: Sawah Indo</h2>
+            <div class="section-title" style="box-shadow: 6px 6px 0 var(--wa-color);">GAMEPASS SAWAH INDO</div>
             <div class="grid">
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-seedling card-icon" style="color: #28a745;"></i>
+                        <i class="fa-solid fa-seedling card-icon"></i>
                         <h3>2x Harvest</h3>
-                        <p class="price">Rp 4.500</p>
+                        <div class="price">Rp 4.500</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: 2x Harvest', 4500)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: 2x Harvest', 4500)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-bolt card-icon" style="color: #ffc107;"></i>
+                        <i class="fa-solid fa-bolt card-icon"></i>
                         <h3>Fast Grow</h3>
-                        <p class="price">Rp 6.500</p>
+                        <div class="price">Rp 6.500</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: Fast Grow', 6500)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: Fast Grow', 6500)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-box-open card-icon" style="color: #17a2b8;"></i>
+                        <i class="fa-solid fa-box-open card-icon"></i>
                         <h3>Extra Slots</h3>
-                        <p class="price">Rp 8.500</p>
+                        <div class="price">Rp 8.500</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: Extra Slots', 8500)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: Extra Slots', 8500)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-money-bill-trend-up card-icon" style="color: #ffc107;"></i>
+                        <i class="fa-solid fa-money-bill-trend-up card-icon"></i>
                         <h3>2x Sell</h3>
-                        <p class="price">Rp 8.500</p>
+                        <div class="price">Rp 8.500</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: 2x Sell', 8500)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: 2x Sell', 8500)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-angles-up card-icon" style="color: #007bff;"></i>
+                        <i class="fa-solid fa-angles-up card-icon"></i>
                         <h3>2x XP</h3>
-                        <p class="price">Rp 13.000</p>
+                        <div class="price">Rp 13.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: 2x XP', 13000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: 2x XP', 13000)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-cloud-showers-heavy card-icon" style="color: #17a2b8;"></i>
+                        <i class="fa-solid fa-cloud-showers-heavy card-icon"></i>
                         <h3>Rain Lover</h3>
-                        <p class="price">Rp 13.500</p>
+                        <div class="price">Rp 13.500</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: Rain Lover', 13500)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: Rain Lover', 13500)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-tractor card-icon" style="color: #6c757d;"></i>
+                        <i class="fa-solid fa-tractor card-icon"></i>
                         <h3>Auto Harvest</h3>
-                        <p class="price">Rp 21.500</p>
+                        <div class="price">Rp 21.500</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: Auto Harvest', 21500)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: Auto Harvest', 21500)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-radio card-icon" style="color: #dc3545;"></i>
+                        <i class="fa-solid fa-radio card-icon"></i>
                         <h3>BoomBox</h3>
-                        <p class="price">Rp 17.000</p>
+                        <div class="price">Rp 17.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: BoomBox', 17000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: BoomBox', 17000)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-crown card-icon" style="color: #ffc107;"></i>
+                        <i class="fa-solid fa-crown card-icon"></i>
                         <h3>VIP Farmer</h3>
-                        <p class="price">Rp 42.500</p>
+                        <div class="price">Rp 42.500</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: VIP Farmer', 42500)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Sawah Indo: VIP Farmer', 42500)">Tambah</button>
                 </div>
             </div>
         </div>
 
         <div class="category-section" data-category="fish">
-            <h2 class="section-title"><i class="fa-solid fa-fish-fins"></i> Fish It: Gamepass</h2>
+            <div class="section-title" style="box-shadow: 6px 6px 0 var(--accent1);">FISH IT: GAMEPASS</div>
             <div class="grid">
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-crown card-icon" style="color: #ffc107;"></i>
+                        <i class="fa-solid fa-crown card-icon"></i>
                         <h3>VIP + Luck</h3>
-                        <span class="badge"><i class="fa-solid fa-gem"></i> 445 R$</span>
-                        <p class="price">Rp 38.000</p>
+                        <span class="badge">445 R$</span>
+                        <div class="price">Rp 38.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: VIP + Luck', 38000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: VIP + Luck', 38000)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-dna card-icon" style="color: #28a745;"></i>
+                        <i class="fa-solid fa-dna card-icon"></i>
                         <h3>More Mutations</h3>
-                        <span class="badge"><i class="fa-solid fa-gem"></i> 295 R$</span>
-                        <p class="price">Rp 25.000</p>
+                        <span class="badge">295 R$</span>
+                        <div class="price">Rp 25.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: More Mutations', 25000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: More Mutations', 25000)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-clover card-icon" style="color: #ffc107;"></i>
+                        <i class="fa-solid fa-clover card-icon"></i>
                         <h3>Advanced Luck</h3>
-                        <span class="badge"><i class="fa-solid fa-gem"></i> 545 R$</span>
-                        <p class="price">Rp 46.500</p>
+                        <span class="badge">545 R$</span>
+                        <div class="price">Rp 46.500</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Advanced Luck', 46500)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Advanced Luck', 46500)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-horseshoe card-icon" style="color: #28a745;"></i>
+                        <i class="fa-solid fa-horseshoe card-icon"></i>
                         <h3>Extra Luck</h3>
-                        <span class="badge"><i class="fa-solid fa-gem"></i> 245 R$</span>
-                        <p class="price">Rp 21.000</p>
+                        <span class="badge">245 R$</span>
+                        <div class="price">Rp 21.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Extra Luck', 21000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Extra Luck', 21000)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-angles-up card-icon" style="color: #00d2ff;"></i>
+                        <i class="fa-solid fa-angles-up card-icon"></i>
                         <h3>Double XP</h3>
-                        <span class="badge"><i class="fa-solid fa-gem"></i> 195 R$</span>
-                        <p class="price">Rp 16.500</p>
+                        <span class="badge">195 R$</span>
+                        <div class="price">Rp 16.500</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Double XP', 16500)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Double XP', 16500)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-ship card-icon" style="color: #17a2b8;"></i>
+                        <i class="fa-solid fa-ship card-icon"></i>
                         <h3>Mini Hoverboat</h3>
-                        <span class="badge"><i class="fa-solid fa-gem"></i> 225 R$</span>
-                        <p class="price">Rp 20.000</p>
+                        <span class="badge">225 R$</span>
+                        <div class="price">Rp 20.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Mini Hoverboat', 20000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Mini Hoverboat', 20000)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-shop card-icon" style="color: #ffc107;"></i>
+                        <i class="fa-solid fa-shop card-icon"></i>
                         <h3>Sell Anywhere</h3>
-                        <span class="badge"><i class="fa-solid fa-gem"></i> 315 R$</span>
-                        <p class="price">Rp 27.000</p>
+                        <span class="badge">315 R$</span>
+                        <div class="price">Rp 27.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Sell Anywhere', 27000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Sell Anywhere', 27000)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-star card-icon" style="color: #28a745;"></i>
+                        <i class="fa-solid fa-star card-icon"></i>
                         <h3>Small Luck</h3>
-                        <span class="badge"><i class="fa-solid fa-gem"></i> 50 R$</span>
-                        <p class="price">Rp 4.000</p>
+                        <span class="badge">50 R$</span>
+                        <div class="price">Rp 4.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Small Luck', 4000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Small Luck', 4000)">Tambah</button>
                 </div>
             </div>
 
-            <h2 class="section-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Fish It: Limited Skin</h2>
+            <div class="section-title" style="box-shadow: 6px 6px 0 var(--secondary);">FISH IT: LIMITED SKIN</div>
             <div class="grid">
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-skull card-icon" style="color: #8a2be2;"></i>
+                        <i class="fa-solid fa-skull card-icon"></i>
                         <h3>Dark Matter Scythe</h3>
-                        <span class="badge"><i class="fa-solid fa-gem"></i> 999 R$</span>
-                        <p class="price">Rp 85.000</p>
+                        <span class="badge">999 R$</span>
+                        <div class="price">Rp 85.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Dark Matter Scythe', 85000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Dark Matter Scythe', 85000)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-guitar card-icon" style="color: #ff69b4;"></i>
+                        <i class="fa-solid fa-guitar card-icon"></i>
                         <h3>Kitty Guitar</h3>
-                        <span class="badge"><i class="fa-solid fa-gem"></i> 899 R$</span>
-                        <p class="price">Rp 75.000</p>
+                        <span class="badge">899 R$</span>
+                        <div class="price">Rp 75.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Kitty Guitar', 75000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Kitty Guitar', 75000)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-shuttle-space card-icon" style="color: #9d00ff;"></i>
+                        <i class="fa-solid fa-shuttle-space card-icon"></i>
                         <h3>Voidcraft Boat</h3>
-                        <span class="badge"><i class="fa-solid fa-gem"></i> 549 R$</span>
-                        <p class="price">Rp 47.000</p>
+                        <span class="badge">549 R$</span>
+                        <div class="price">Rp 47.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Voidcraft Boat', 47000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Voidcraft Boat', 47000)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-box card-icon" style="color: #00d2ff;"></i>
+                        <i class="fa-solid fa-box card-icon"></i>
                         <h3>Azura Crate</h3>
-                        <span class="badge"><i class="fa-solid fa-gem"></i> 109 R$</span>
-                        <p class="price">Rp 9.500</p>
+                        <span class="badge">109 R$</span>
+                        <div class="price">Rp 9.500</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Azura Crate', 9500)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Azura Crate', 9500)">Tambah</button>
                 </div>
             </div>
 
-            <h2 class="section-title"><i class="fa-solid fa-rocket"></i> Fish It: Boost & Crate</h2>
+            <div class="section-title" style="box-shadow: 6px 6px 0 var(--primary);">FISH IT: BOOST & CRATE</div>
             <div class="grid">
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-rocket card-icon" style="color: #00d2ff;"></i>
+                        <i class="fa-solid fa-rocket card-icon"></i>
                         <h3>Server Boost x8</h3>
-                        <span class="badge"><i class="fa-regular fa-clock"></i> 6 Jam</span>
-                        <p class="price">Rp 109.000</p>
+                        <span class="badge">6 Jam</span>
+                        <div class="price">Rp 109.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Boost x8 (6 Jam)', 109000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Boost x8 (6 Jam)', 109000)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-gauge-high card-icon" style="color: #8a2be2;"></i>
+                        <i class="fa-solid fa-gauge-high card-icon"></i>
                         <h3>Server Boost x8</h3>
-                        <span class="badge"><i class="fa-regular fa-clock"></i> 12 Jam</span>
-                        <p class="price">Rp 160.000</p>
+                        <span class="badge">12 Jam</span>
+                        <div class="price">Rp 160.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Boost x8 (12 Jam)', 160000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Boost x8 (12 Jam)', 160000)">Tambah</button>
                 </div>
                 <div class="card">
                     <div>
-                        <i class="fa-solid fa-jet-fighter card-icon" style="color: #dc3545;"></i>
+                        <i class="fa-solid fa-jet-fighter card-icon"></i>
                         <h3>Server Boost x8</h3>
-                        <span class="badge"><i class="fa-regular fa-clock"></i> 24 Jam</span>
-                        <p class="price">Rp 260.000</p>
+                        <span class="badge">24 Jam</span>
+                        <div class="price">Rp 260.000</div>
                     </div>
-                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Boost x8 (24 Jam)', 260000)"><i class="fa-solid fa-plus"></i> Tambah</button>
+                    <button class="btn-beli" onclick="tambahKeKeranjang('Fish It: Boost x8 (24 Jam)', 260000)">Tambah</button>
                 </div>
             </div>
         </div>
 
     </div>
+
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
 
     <div class="floating-cart" id="floating-cart" onclick="toggleCart()">
         <i class="fa-solid fa-cart-shopping"></i>
@@ -946,32 +1022,35 @@
 
     <div class="cart-sidebar" id="cart-sidebar">
         <div class="cart-header">
-            <h3><i class="fa-solid fa-cart-shopping"></i> Keranjang</h3>
-            <button onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+            <h3>KERANJANGKU</h3>
+            <button class="btn-close" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
         </div>
-        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-items" id="cart-items">
+            </div>
         
         <div class="cart-form">
-            <label for="roblox-user"><i class="fa-solid fa-user"></i> Username Roblox (Wajib)</label>
-            <input type="text" id="roblox-user" placeholder="Ketik Username (Bukan Display Name)" required>
+            <label for="roblox-user">USERNAME ROBLOX (WAJIB)</label>
+            <input type="text" id="roblox-user" placeholder="Ketik Username Asli" required>
         </div>
 
         <div class="cart-footer">
             <div class="cart-total">
-                <span>Total:</span>
+                <span>TOTAL:</span>
                 <span id="cart-total-price">Rp 0</span>
             </div>
             <button class="btn-checkout" onclick="bukaModalQRIS()">
-                <i class="fa-solid fa-qrcode"></i> Lanjut Bayar (QRIS)
+                LANJUT BAYAR
             </button>
         </div>
     </div>
 
+    <div id="toast-container" class="toast-container"></div>
+
     <div class="qris-modal-overlay" id="qrisModal">
         <div class="qris-modal-content">
-            <button class="close-modal" onclick="tutupModalQRIS()"><i class="fa-solid fa-xmark"></i></button>
-            <h2><i class="fa-solid fa-qrcode" style="color:var(--secondary);"></i> Scan QRIS</h2>
-            <p>Silakan bayar sejumlah tagihan di bawah ini via M-Banking / E-Wallet (DANA, GoPay, OVO, ShopeePay).</p>
+            <button class="btn-close" style="position: absolute; top: -15px; right: -15px;" onclick="tutupModalQRIS()"><i class="fa-solid fa-xmark"></i></button>
+            <h2>SCAN QRIS</h2>
+            <p>Silakan bayar tagihan di bawah ini via E-Wallet / M-Banking kesayanganmu.</p>
             
             <div class="qris-price-tag" id="modal-tagihan">Rp 0</div>
             
@@ -980,19 +1059,20 @@
             </div>
 
             <a href="LINK_FOTO_QRIS_KAMU_DISINI.jpeg" download="QRIS_Botol_Store.jpeg" class="btn-download-qris">
-                <i class="fa-solid fa-download"></i> Simpan QRIS ke Galeri
+                <i class="fa-solid fa-download"></i> SIMPAN QRIS KE GALERI
             </a>
 
-            <p class="warning-text">⚠️ PENTING: Jangan lupa *Screenshot* bukti transfer ya!</p>
+            <div class="warning-text">⚠️ PENTING: Jangan lupa Screenshot bukti bayar!</div>
             
             <button class="btn-wa-confirm" onclick="konfirmasiKeWA()">
-                <i class="fa-brands fa-whatsapp"></i> Konfirmasi Bukti Transfer
+                <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> KONFIRMASI KE WA
             </button>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 <span>BOTOL COMMUNITY STORE</span>. All rights reserved.</p>
+        <h2>BOTOL COMMUNITY STORE</h2>
+        <p style="margin-top: 10px;">&copy; 2026. All rights reserved.</p>
     </footer>
 
     <script>
@@ -1000,9 +1080,31 @@
         let keranjang = {};
         let totalHargaGlobal = 0; 
 
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedCart = localStorage.getItem('botolStoreCart');
+            if (savedCart) {
+                keranjang = JSON.parse(savedCart);
+                updateUIKeranjang();
+            }
+        });
+
         function formatRupiah(angka) { return 'Rp ' + angka.toLocaleString('id-ID'); }
 
-        // Fitur Filter
+        function showToast(namaProduk) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `<i class="fa-solid fa-bolt" style="color: var(--accent1);"></i> <span><b>${namaProduk}</b> masuk tas!</span>`;
+            
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(30px)';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+
         function filterData(kategori, element) {
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
             element.classList.add('active');
@@ -1019,9 +1121,12 @@
             if (keranjang[nama]) { keranjang[nama].qty += 1; } 
             else { keranjang[nama] = { harga: harga, qty: 1 }; }
             updateUIKeranjang();
+            
             const cartBtn = document.getElementById('floating-cart');
-            cartBtn.style.transform = 'scale(1.2)';
-            setTimeout(() => cartBtn.style.transform = 'scale(1)', 200);
+            cartBtn.style.transform = 'scale(1.1) rotate(5deg)';
+            setTimeout(() => cartBtn.style.transform = 'scale(1) rotate(0)', 200);
+
+            showToast(nama);
         }
 
         function kurangiItem(nama) {
@@ -1046,65 +1151,95 @@
             let totalQty = 0;
             totalHargaGlobal = 0;
 
-            for (const [nama, item] of Object.entries(keranjang)) {
-                totalQty += item.qty;
-                totalHargaGlobal += item.harga * item.qty;
+            const cartKeys = Object.keys(keranjang);
 
-                const itemHTML = `
-                    <div class="cart-item">
-                        <div class="cart-item-info">
-                            <h4>${nama}</h4>
-                            <p>${formatRupiah(item.harga * item.qty)}</p>
-                        </div>
-                        <div class="cart-controls">
-                            <button onclick="kurangiItem('${nama}')"><i class="fa-solid fa-minus"></i></button>
-                            <span>${item.qty}</span>
-                            <button onclick="tambahItem('${nama}')"><i class="fa-solid fa-plus"></i></button>
-                        </div>
+            if (cartKeys.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fa-solid fa-ghost"></i>
+                        <p>Kosong melompong.<br>Yuk jajan dulu ngab!</p>
                     </div>
                 `;
-                cartItemsContainer.innerHTML += itemHTML;
+            } else {
+                for (const [nama, item] of Object.entries(keranjang)) {
+                    totalQty += item.qty;
+                    totalHargaGlobal += item.harga * item.qty;
+
+                    const itemHTML = `
+                        <div class="cart-item">
+                            <div class="cart-item-info">
+                                <h4>${nama}</h4>
+                                <p>${formatRupiah(item.harga * item.qty)}</p>
+                            </div>
+                            <div class="cart-controls">
+                                <button onclick="kurangiItem('${nama}')">-</button>
+                                <span>${item.qty}</span>
+                                <button onclick="tambahItem('${nama}')">+</button>
+                            </div>
+                        </div>
+                    `;
+                    cartItemsContainer.innerHTML += itemHTML;
+                }
             }
 
             cartBadge.innerText = totalQty;
             cartTotalPrice.innerText = formatRupiah(totalHargaGlobal);
 
-            if (totalQty > 0) { floatingCart.style.display = 'flex'; } 
-            else { floatingCart.style.display = 'none'; document.getElementById('cart-sidebar').classList.remove('active'); }
+            if (totalQty > 0) { 
+                floatingCart.style.display = 'flex'; 
+            } else { 
+                floatingCart.style.display = 'none'; 
+                document.getElementById('cart-sidebar').classList.remove('active'); 
+                document.getElementById('cart-overlay').classList.remove('active');
+            }
+
+            localStorage.setItem('botolStoreCart', JSON.stringify(keranjang));
         }
 
-        function toggleCart() { document.getElementById('cart-sidebar').classList.toggle('active'); }
+        function toggleCart() { 
+            document.getElementById('cart-sidebar').classList.toggle('active'); 
+            document.getElementById('cart-overlay').classList.toggle('active');
+        }
 
         function bukaModalQRIS() {
             if (Object.keys(keranjang).length === 0) return;
 
             const usernameInput = document.getElementById('roblox-user').value.trim();
+            
             if (!usernameInput) {
                 alert("⚠️ Harap isi Username Roblox kamu sebelum checkout!");
                 document.getElementById('roblox-user').focus();
                 return;
             }
 
+            if (usernameInput.length < 3) {
+                alert("⚠️ Username Roblox kependekan! Minimal 3 karakter.");
+                document.getElementById('roblox-user').focus();
+                return;
+            }
+
             document.getElementById('modal-tagihan').innerText = formatRupiah(totalHargaGlobal);
             document.getElementById('cart-sidebar').classList.remove('active');
+            document.getElementById('cart-overlay').classList.remove('active');
             document.getElementById('qrisModal').style.display = 'flex';
         }
 
         function tutupModalQRIS() {
             document.getElementById('qrisModal').style.display = 'none';
             document.getElementById('cart-sidebar').classList.add('active');
+            document.getElementById('cart-overlay').classList.add('active');
         }
 
         function konfirmasiKeWA() {
             const usernameInput = document.getElementById('roblox-user').value.trim();
             
-            let pesanText = `Halo Admin Botol Store! 👋\n\nSaya sudah melakukan *PEMBAYARAN VIA QRIS*, berikut detail pesanan saya:\n\n👤 *Username:* ${usernameInput}\n\n*Daftar Pesanan:*\n`;
+            let pesanText = `Halo Admin Botol Store! 👋\n\nGue udah bayar *VIA QRIS* nih, tolong di proses ya:\n\n👤 *Username:* ${usernameInput}\n\n*Pesanan:*\n`;
 
             for (const [nama, item] of Object.entries(keranjang)) {
                 pesanText += `📦 *${nama}* (${item.qty}x)\n`;
             }
 
-            pesanText += `\n💰 *TOTAL DIBAYAR: ${formatRupiah(totalHargaGlobal)}*\n\n*(Berikut ini saya lampirkan gambar bukti transfernya ya min)*`;
+            pesanText += `\n💰 *TOTAL DIBAYAR: ${formatRupiah(totalHargaGlobal)}*\n\n*(Bukti transfernya gue lampirin di bawah ya min!)*`;
 
             const pesanEncoded = encodeURIComponent(pesanText);
             const linkWhatsApp = `https://wa.me/${nomorWAAdmin}?text=${pesanEncoded}`;
